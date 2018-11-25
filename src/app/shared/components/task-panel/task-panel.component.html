@@ -1,0 +1,57 @@
+<div class="task-panel">
+  <div *ngIf="task">
+    <task-item [task]="task"></task-item>
+  </div>
+
+  <div class="panel-content" *ngIf="selected">
+    <div class="between-container margin-bottom-big">
+      <button class="option" (click)="selectOption('name')">Change name</button>
+      <button class="option" (click)="selectOption('date')">Finish Date</button>
+      <button class="option" (click)="selectOption('category')">Categories</button>
+      <button class="option" (click)="selectOption('comment')">Comments</button>
+    </div>
+    <input type="text" [(ngModel)]="newTask.name" placeholder="Task name ..." class="pyt-input"
+      *ngIf="selected == 'name'" />
+    <input type="text" [(ngModel)]="newEndDate" [disabled]="dateDisabled" class="pyt-input"
+      bsDatepicker *ngIf="selected == 'date'" [bsConfig]="bsConfig">{{bsValue}}
+
+    <div class="end-container margin-top" *ngIf="selected == 'name' || selected == 'date'">
+      <button class="pyt-button" (click)="saveTask()">Save</button>
+    </div>
+
+    <div *ngIf="selected == 'category'">
+
+      <div *ngFor="let category of categories" class="item" (click)="setNewCategory(category)"
+        [class.selected]="newTask.category != null && category.id == newTask.category.id">
+        <i class="fas fa-circle" [style.color]="category.color"></i>
+        <div class="category-name">{{category.name}}</div>
+      </div>
+
+      <div class="end-container margin-bottom-big">
+        <button class="pyt-button" (click)="changeCategory()">Save</button>
+      </div>
+
+      <div class="flex-container margin-bottom">
+        <i class="fas fa-circle margin-right click-cursor" [style.color]="newCategory.color"
+          [(colorPicker)]="newCategory.color"></i>
+        <input [(ngModel)]="newCategory.name" placeholder="Category name ..." class="pyt-input" />
+      </div>
+      <div class="end-container">
+        <button class="pyt-button" (click)="addCategory()">Add</button>
+      </div>
+
+
+    </div>
+    <div *ngIf="selected == 'comment'">
+      <div *ngFor="let comment of task.comments" class="item break-word">
+        {{comment.content}}
+      </div>
+      <textarea [(ngModel)]="newComment.content" placeholder="Comment content ..." class="comment-content margin-top-big">
+                {{newComment.content}}
+            </textarea>
+      <div class="end-container">
+        <button class="pyt-button" (click)="addComment()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

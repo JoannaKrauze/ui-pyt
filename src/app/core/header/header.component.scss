@@ -1,0 +1,19 @@
+@import '../../../styles';
+
+#header {
+    display: grid;
+    grid-template-columns: 50px auto 70px;
+    align-items: center;
+
+    color: white;
+    background-color: $default-mint;
+    height: 100%;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+
+.logout {
+  font-size: 14px;
+  pointer: cursor;
+}

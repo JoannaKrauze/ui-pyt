@@ -1,0 +1,23 @@
+<div class="login-container" *ngIf="loginVisible">
+  <div class="login-view" *ngIf="view">
+    <div class="content-header">Log in</div>
+    <input class="login-input" [(ngModel)]="loginRequest.email" placeholder="Email..." />
+    <input class="login-input" type="password" [(ngModel)]="loginRequest.password" placeholder="Password..." />
+    <div class="between-container">
+      <button class="pyt-button" (click)="login()">Log in</button>
+      <button class="pyt-button" (click)="changeView(false)">Sign up</button>
+    </div>
+  </div>
+  <div class="sign-in-view" *ngIf="!view">
+    <div class="content-header">Sign up</div>
+    <input class="login-input" [(ngModel)]="signUp.name" placeholder="Name..." />
+    <input class="login-input" [(ngModel)]="signUp.email" placeholder="Email..." />
+    <input class="login-input" type="password" [(ngModel)]="signUp.password" placeholder="Password..." />
+
+    <div class="between-container">
+      <button class="pyt-button" (click)="signIn()">Sign up</button>
+      <button class="pyt-button" (click)="changeView(true)">Log In</button>
+    </div>
+  </div>
+  <div class="error">{{errorMessage}}</div>
+</div>

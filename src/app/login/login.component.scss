@@ -1,0 +1,25 @@
+@import "../../styles";
+
+.login-container {
+    @extend .center-container;
+    .login-view, .sign-in-view {
+      width: 400px;
+    }
+    height: 80%;
+}
+
+.content-header {
+    font-size:30px;
+}
+
+.login-input {
+    @extend .pyt-input;
+    margin: 10px 0;
+    width: calc(100% - 12px);
+}
+
+.error {
+    color: red;
+    margin: 10px;
+    font-size: 16px;
+}

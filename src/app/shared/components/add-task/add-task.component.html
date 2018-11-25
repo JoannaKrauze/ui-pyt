@@ -1,0 +1,4 @@
+<div class="flex margin-bottom">
+  <input type="text" [(ngModel)]="newTaskName" placeholder="Task name ..." class="add-input click-cursor" />
+  <button class="pyt-button" (click)="add()" [disabled]="!newTaskName.length">Add</button>
+</div>

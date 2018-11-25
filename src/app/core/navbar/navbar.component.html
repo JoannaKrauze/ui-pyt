@@ -1,0 +1,10 @@
+<div id="navbar" *ngIf="show">
+  <div *ngFor="let item of navItems">
+    <a routerLink="{{item.path}}">
+      <i class="{{item.icon}}"></i>
+      <div class="item-name">
+        {{item.name}}
+      </div>
+    </a>
+  </div>
+</div>

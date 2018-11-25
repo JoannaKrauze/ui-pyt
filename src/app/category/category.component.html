@@ -1,0 +1,20 @@
+<div class="page">
+  <div class="task-list">
+    <div *ngFor="let item of categoryTasks">
+      <div class="category-header" (click)="changeVisible(item)">
+        <div class="category-name">{{item.category.name}}</div>
+        <i class="fas fa-chevron-down" *ngIf="!item.visible"></i>
+        <i class="fas fa-chevron-up" *ngIf="item.visible"></i>
+      </div>
+      <div *ngIf="item.visible" [id]="item.category.id">
+        <task-item *ngFor="let task of item.tasks" [id]="task.id" [task]="task"
+          (click)="choseTask(task)" [selected]="selectedTask != null && selectedTask.id == task.id">
+        </task-item>
+        <task-item *ngIf="item.tasks.length == 0"></task-item>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedTask" class="task-panel">
+    <task-panel [task]="selectedTask" [categories]="user.categories"></task-panel>
+  </div>
+</div>

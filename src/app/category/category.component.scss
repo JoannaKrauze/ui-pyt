@@ -1,0 +1,9 @@
+@import "../../styles";
+@import "../../styles/task-list";
+
+.category-header {
+  @extend .task-item;
+  color: white;
+  background-color: $default-mint;
+  grid-template-columns: auto 25px;
+}

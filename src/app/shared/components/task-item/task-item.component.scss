@@ -1,0 +1,19 @@
+@import "../../../../styles/task-list";
+
+.task-item-content {
+  @extend .task-item;
+  grid-template-columns: 40px auto 40px 20px;
+  word-break: break-all;
+}
+
+.selected {
+  background-color: #EEEEEE;
+}
+
+i {
+  cursor: pointer;
+}
+
+.done {
+  color: limegreen;
+}

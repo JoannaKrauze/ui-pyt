@@ -1,0 +1,36 @@
+@import './styles/colors.scss';
+@import './styles/flex.scss';
+@import './styles/forms.scss';
+
+body {
+  color: $medium-grey;
+  background-color: #F0F4F7;
+}
+
+.margin-top {
+  margin-top: 5px;
+}
+
+.margin-top-big {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-big {
+  margin-bottom: 20px;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
+
+.break-word {
+  break-word: break-all;
+}
+
+.click-cursor {
+  cursor: pointer;
+}

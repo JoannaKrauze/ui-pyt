@@ -1,0 +1,26 @@
+@import '../styles';
+
+#container {
+  display: grid;
+  height: 100vh;
+  margin: -8px;
+
+  grid-template-columns: 50px auto;
+  grid-template-rows: 50px auto 30px;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer  footer";
+  app-header {
+    grid-area: header;
+  }
+  app-navbar {
+    grid-area: sidebar;
+  }
+  router-outlet {
+    grid-area: content;
+  }
+  app-footer {
+    grid-area: footer;
+  }
+}

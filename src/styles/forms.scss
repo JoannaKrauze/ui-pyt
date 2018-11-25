@@ -1,0 +1,24 @@
+@import "./colors";
+
+.pyt-button {
+  color: white;
+  background-color: $default-mint;
+  border: none;
+  height: 30px;
+  font-size:20px;
+  cursor: pointer;
+  &:hover {
+      background-color: $hover-mint;
+  }
+  &:disabled {
+    color: #B7B7B7;
+    background-color: white;
+    border: 1px solid #B7B7B7;
+  }
+}
+
+.pyt-input {
+    height: 28px;
+    padding: 0 5px;
+    border: 1px solid #B7B7B7;
+}

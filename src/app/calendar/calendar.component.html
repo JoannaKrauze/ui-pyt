@@ -1,0 +1,10 @@
+<div class="page">
+  <div class="task-list">
+    <div class="center-container">
+      <button class="pyt-button" (click)="changeMonth(-1)">Previous</button>
+      <div>{{ getMonthName(viewDate)}} {{viewDate.getFullYear()}}</div>
+      <button class="pyt-button" (click)="changeMonth(1)">Next</button>
+    </div>
+    <calendar-month [tasks]="user.tasks" [date]="viewDate" *ngIf="viewDate && user"></calendar-month>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="page">
+  <div class="task-list" *ngIf="user">
+    <div class="margin-bottom-big">
+      <task-item *ngFor="let task of user.tasks" [task]="task" (click)="choseTask(task)" [selected]="selectedTask && selectedTask.id == task.id">
+      </task-item>
+    </div>
+
+    <add-task [(tasks)]="user.tasks" [defaultTask]="getDefaultTask(user.tasks)" *ngIf="user"></add-task>
+
+  </div>
+  <div *ngIf="selectedTask" class="task-panel">
+    <task-panel [task]="selectedTask" [categories]="user.categories"></task-panel>
+  </div>
+</div>

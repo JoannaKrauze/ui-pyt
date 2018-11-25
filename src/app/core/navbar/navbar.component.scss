@@ -1,0 +1,21 @@
+@import '../../../styles';
+
+#navbar {
+  @extend .column-container;
+  height: calc(100% - 20px);
+  font-size: 30px;
+  background-color: $dark-grey;
+  padding-top: 20px;
+
+  a {
+    @extend .center-container;
+    flex-direction: column;
+    height: 60px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .item-name {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="calendar" *ngIf="date">
+  <div class="day-name" *ngFor="let month of daysOfWeek">{{month}}</div>
+  <calendar-day *ngFor="let day of getMonthDays(date)" [day]="day" (click)="selectDay(day)"
+    [selected]="selected == day">
+  </calendar-day>
+</div>
+
+<div class="task-list" *ngIf="selected">
+  <div class="margin-bottom-big">
+    <task-item *ngFor="let task of getTasks(selected,tasks)" [task]="task">
+    </task-item>
+  </div>
+
+  <add-task [(tasks)]="tasks" [defaultTask]="getDefaultTask(date,selected)"></add-task>
+</div>

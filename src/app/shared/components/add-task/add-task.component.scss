@@ -1,0 +1,7 @@
+@import "../../../../styles";
+
+.add-input {
+  @extend .pyt-input;
+    width: calc(100% - 48px);
+    margin-right: 10px;
+}

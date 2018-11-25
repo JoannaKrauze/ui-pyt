@@ -1,0 +1,16 @@
+<div class="task-item-content" [class.selected]="selected">
+  <div class="icon-container" *ngIf="task != null">
+    <i class="fas fa-check-circle done" *ngIf="task.isDone" (click)="changeIsDone()"></i>
+    <i class="far fa-circle" *ngIf="!task.isDone" (click)="changeIsDone()"></i>
+  </div>
+  <div class="task-name" *ngIf="task != null">
+    {{task.name}}
+  </div>
+  <div>
+    <i class="fas fa-circle" [style.color]="task.category.color" *ngIf="task && task.category"></i>
+  </div>
+  <div *ngIf="task != null" (click)="changeIsImportant()">
+    <i class="fas fa-star" *ngIf="task.isImportant"></i>
+    <i class="far fa-star" *ngIf="!task.isImportant"></i>
+  </div>
+</div>

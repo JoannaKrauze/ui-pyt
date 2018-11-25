@@ -1,0 +1,15 @@
+@import "../../../styles";
+@import "../../../styles/task-list";
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-row-gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.day-name {
+  font-size: 18px;
+}

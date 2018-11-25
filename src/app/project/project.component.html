@@ -1,0 +1,15 @@
+<div class="projects-page">
+  <div class="project-panel" *ngIf="user">
+    <div class="project-list margin-bottom-big">
+      <div class="project-item" *ngFor="let project of user.projects" (click)="chooseProject(project)"
+        [class.selected]="selectedProject != null && selectedProject.id == project.id">
+        {{project.name}}
+      </div>
+    </div>
+    <div class="between-container">
+      <input type="text" [(ngModel)]="newProjectName" placeholder="Project name ..." class="add-input" />
+      <button class="pyt-button" (click)="addProject()" [disabled]="!newProjectName">Add</button>
+    </div>
+  </div>
+  <project-tasks [(user)]="user" [(project)]="selectedProject"></project-tasks>
+</div>
